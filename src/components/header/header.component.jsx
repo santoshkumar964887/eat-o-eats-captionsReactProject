@@ -13,8 +13,8 @@ const Header = ({ currentUser }) => (
       <Logo className='logo' />
     </Link>
     <div className='options'>
-      <Link className='option' to='/shop'>
-        SHOP
+      <Link className='option' to='/order'>
+        ORDER
       </Link>
       <Link className='option' to='/shop'>
         CONTACT

@@ -12,6 +12,7 @@
   font-family: 'Open Sans Condensed';
   font-weight: bolder;
   border: none;
+  border-radius: 3px;
   cursor: pointer;
 
   &:hover {
@@ -23,6 +24,7 @@
   &.google-sign-in {
     background-color: #4285f4;
     color: white;
+    padding: 0 15px 0 15px;
 
     &:hover {
       background-color: #357ae8;

@@ -2,8 +2,8 @@ import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 
 const StripeCheckoutButton = ({ price }) => {
-  const priceForStripe = price * 100;
-  const publishableKey = 'pk_test_WBqax2FWVzS9QlpJScO07iuL';
+  const priceForStripe = price * 100*75;
+  const publishableKey = 'pk_test_hMzyia9jY0IbVNmrzBrKPhVr00cKUfjBBt';
 
   const onToken = token => {
     console.log(token);
@@ -14,10 +14,11 @@ const StripeCheckoutButton = ({ price }) => {
     <StripeCheckout
       label='Pay Now'
       name='CRWN Clothing Ltd.'
+      currency="INR"
       billingAddress
       shippingAddress
-      image='https://svgshare.com/i/CUz.svg'
-      description={`Your total is $${price}`}
+      image='https://www.freepik.com/free-vector/fast-food-set_4278071.htm#page=1&query=food%20icon&position=2'
+      description={`Your total is inr${price}`}
       amount={priceForStripe}
       panelLabel='Pay Now'
       token={onToken}

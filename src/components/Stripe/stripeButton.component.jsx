@@ -13,12 +13,12 @@ const StripeCheckoutButton = ({ price }) => {
   return (
     <StripeCheckout
       label='Pay Now'
-      name='CRWN Clothing Ltd.'
+      name='Eat O Eat Ltd.'
       currency="INR"
       billingAddress
       shippingAddress
-      image='https://www.freepik.com/free-vector/fast-food-set_4278071.htm#page=1&query=food%20icon&position=2'
-      description={`Your total is inr${price}`}
+      image='https://stripe.com/img/documentation/checkout/marketplace.png'
+      description={`Your total is inr ${price}`}
       amount={priceForStripe}
       panelLabel='Pay Now'
       token={onToken}

@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans Condensed';
+  font-family: 'Teko', sans-serif;
   padding: 20px 40px;
 }
 
@@ -10,4 +10,7 @@ a {
 
 * {
   box-sizing: border-box;
+}
+.cardInformation{
+  color: red;
 }

@@ -1,14 +1,18 @@
-.header {
+.header { 
+ background-color: rgb(245, 244, 244);
+  box-shadow: 5px 5px 5px  1px #596e79;
   height: 70px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
+  border-radius: 3px;
 
   .logo-container {
     height: 100%;
     width: 100px;
     padding: 25px;
+    margin-top: -10px;
   }
 
   .options {

@@ -1,5 +1,6 @@
 import React from "react";
 import "./cityCard.scss";
+import {Link} from 'react-router-dom';
 const CityCard = (props) => {
   console.log(props);
   //url("https://b.zmtcdn.com/data/pictures/3/18970053/e1575be0fd34b12b3c4d348cb4157d03.jpg")
@@ -47,6 +48,7 @@ const url=props.restaurant.featured_image?props.restaurant.featured_image :"http
           <td className="th1">{props.restaurant.phone_numbers}</td>
         </tr>
       </table>
+      <Link to='/order/resturent' className="order-now">order now</Link>
     </div>
   );
 };

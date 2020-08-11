@@ -13,6 +13,7 @@ const Header = ({ currentUser }) => (
     <Link className='logo-container' to='/'>
       <Logo className='logo' />
     </Link>
+    <div style={{fontSize:'40px',padding:'10px'}}>Eat-O-Eat</div>
     <div className='options'>
       <Link className='option' to='/order'>
         ORDER

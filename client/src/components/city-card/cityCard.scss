@@ -1,0 +1,82 @@
+.cardContainer {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  height: 550px;
+  margin-top:40px;
+  position: relative;
+  padding: 20px;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(203, 207, 224) 30%,
+    rgba(61, 82, 117, 0.5) 70%
+  );
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow:3px 3px 5px 1px rgba(61, 82, 117, 0.9);
+  .image {
+  &:hover {
+    
+    
+        overflow: hidden;
+      transform: scale(1.15);
+
+      
+      transition: all 10s ease-in;
+    }
+  }
+  .image {
+    position: relative;
+    width: 310px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 5px;
+    overflow: hidden;
+    border-radius: 3px;
+    float: left;
+    
+  }
+
+  .quick {
+    font-size: 19px;
+    font-weight:300;
+    width: 100px;
+    color: rgb(95, 90, 90);
+    
+  }
+  .name{
+      color: crimson;
+      font-size: 25px;
+  }
+  .option1{
+      .star{
+          color: rgb(255, 255, 17);
+      }
+      .NumbarOfR{
+        font-size: 16px;
+        font-weight:400;
+        margin: 0px 5px 0px 10px;
+        letter-spacing: 3px;
+        word-spacing:5px;
+        color: rgb(70, 64, 64);
+
+      }
+      .review{
+          color: darkgreen;
+      }
+      .Not{
+        color: darkgreen;
+      }
+     
+  }
+  .address{
+    color: rgb(70, 64, 64);
+
+  }
+
+  .th1{
+    color: rgb(70, 64, 64);
+  }
+  
+}

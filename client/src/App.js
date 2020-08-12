@@ -5,7 +5,7 @@ import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up
 import OrderUpPage from "./pages/order/order.route";
 import Header from "./components/header/header.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
-import RandomePic from './components/randomPic/randomePic';
+import LandingPage from './components/landingPage/landingPage';
 import './App.css';
 class App extends React.Component {
   constructor() {
@@ -50,6 +50,7 @@ class App extends React.Component {
         <Switch>
           <Route path="/signin" component={SignInAndSignUpPage} />
           <Route path="/order" component={OrderUpPage} />
+          <Route path="/" component={LandingPage}/>
         </Switch>
     <div>
        

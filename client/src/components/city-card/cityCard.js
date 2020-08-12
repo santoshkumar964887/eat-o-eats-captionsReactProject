@@ -3,9 +3,35 @@ import "./cityCard.scss";
 import {Link} from 'react-router-dom';
 const CityCard = (props) => {
   console.log(props);
-  //url("https://b.zmtcdn.com/data/pictures/3/18970053/e1575be0fd34b12b3c4d348cb4157d03.jpg")
+  
+  let randomImageNames = [
+    "cuisine",
+    "dishes",
+    "food",
+    "delicious",
+    "restaurant",
+    "gourmet",
+    "foodies",
+    "meat",
+    "bread",
+    "fruit",
+    "pizza",
+    "burguer",
+    "juice",
+    "coke",
+    "salad",
+    "snack",
+    "drink",
+    "coffee",
+    "cheese",
+    "tea",
+  ];
+  let randomImage = randomImageNames[Math.floor(Math.random() * (20 - 0) + 0)];
 
-const url=props.restaurant.featured_image?props.restaurant.featured_image :"https://b.zmtcdn.com/data/pictures/3/18970053/e1575be0fd34b12b3c4d348cb4157d03.jpg"
+  const image = `https://source.unsplash.com/500x300/?${randomImage}`;
+
+
+const url=props.restaurant.featured_image?props.restaurant.featured_image :image;
   return (
     <div className="cardContainer">
       <div

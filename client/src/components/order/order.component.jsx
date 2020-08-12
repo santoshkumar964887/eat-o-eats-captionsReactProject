@@ -14,6 +14,46 @@ class Order extends React.Component {
       inputSerch: "",
       cityDetail: "",
       getcityloationDetails: { lat: 28.651952, lng: 77.231495 },
+      image: function () {
+        let randomImageNames = [
+          "cuisine",
+          "dishes",
+          "food",
+          "delicious",
+          "restaurant",
+          "gourmet",
+          "foodies",
+          "meat",
+          "bread",
+          "fruit",
+          "pizza",
+          "burguer",
+          "juice",
+          "coke",
+          "salad",
+          "snack",
+          "drink",
+          "coffee",
+          "cheese",
+          "tea",
+          "Biryani",
+          "Chicken Do Pyaza ",
+          " Tandoori",
+          "Zeera ",
+          "Chaat",
+          "Dahl ",
+          "Aloo gobi ",
+          "Aloo tikki ",
+          "Aloo matar ",
+          "Aloo methi ",
+        ];
+        console.log(randomImageNames.length);
+        let randomImage =
+          randomImageNames[Math.floor(Math.random() * (30 - 0) + 0)];
+
+        const images = `https://source.unsplash.com/500x300/?${randomImage}`;
+        return images;
+      },
     };
   }
   handleChange = (e) => {
@@ -54,49 +94,11 @@ class Order extends React.Component {
       ));
     }
 
-    let randomImageNames = [
-      "cuisine",
-      "dishes",
-      "food",
-      "delicious",
-      "restaurant",
-      "gourmet",
-      "foodies",
-      "meat",
-      "bread",
-      "fruit",
-      "pizza",
-      "burguer",
-      "juice",
-      "coke",
-      "salad",
-      "snack",
-      "drink",
-      "coffee",
-      "cheese",
-      "tea",
-      "Biryani",
-      "Chicken Do Pyaza ",
-      " Tandoori",
-      "Zeera ",
-      "Chaat",
-      "Dahl ",
-      "Aloo gobi ",
-      "Aloo tikki ",
-      "Aloo matar ",
-      "Aloo methi ",
-    ];
-    console.log(randomImageNames.length);
-    let randomImage =
-      randomImageNames[Math.floor(Math.random() * (30 - 0) + 0)];
-
-    const image = `https://source.unsplash.com/500x300/?${randomImage}`;
-
     return (
       <div>
         <div
           className="img-container"
-          style={{ backgroundImage: `url(${image})` }}
+          style={{ backgroundImage: `url(${this.state.image()})` }}
         >
           <input
             type="text"
@@ -111,7 +113,7 @@ class Order extends React.Component {
           <input
             type="text"
             className="input-serch1"
-            placeholder="Serch Restaurants Or Location Or Cuisines"
+            placeholder=" Serch Restaurants Or Cuisines"
             onChange={this.handleChange}
           />
           <button className="serch-Button1" onClick={this.HandleonClickButton}>

@@ -8,9 +8,14 @@
     .card1{
         width: 300px;
         height: 400px;
+        overflow: hidden;
         .image{
             width: 290px;
             height: 390px;
+            &:hover{
+                transform:scale(1.08);
+                transition: all 3s ease-in-out;
+            }
 
         }
 

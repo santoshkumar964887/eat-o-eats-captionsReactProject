@@ -4,17 +4,11 @@ import axios from "axios";
 import cityDetail from "./cityDetail.json";
 import CityCard from "../../components/city-card/cityCard";
 import "./order.style.scss";
+import Advertisement from '../../pages/advertisement/advertisement';
+import a1 from '../../assets/a1.jpg';
 
-class Order extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      price: 500,
-      data: null,
-      inputSerch: "",
-      cityDetail: "",
-      getcityloationDetails: { lat: 28.651952, lng: 77.231495 },
-      image: function () {
+
+const getRandomCusisineImage = () => {
         let randomImageNames = [
           "cuisine",
           "dishes",
@@ -47,20 +41,36 @@ class Order extends React.Component {
           "Aloo matar ",
           "Aloo methi ",
         ];
-        console.log(randomImageNames.length);
-        let randomImage =
-          randomImageNames[Math.floor(Math.random() * (30 - 0) + 0)];
+  let randomImage = randomImageNames[Math.floor(Math.random() * (30 - 0) + 0)];
+  const image = `https://source.unsplash.com/500x300/?${randomImage}`;
+  return image;
+}
 
-        const images = `https://source.unsplash.com/500x300/?${randomImage}`;
-        return images;
-      },
-    };
+/**
+ * - Set Random image on first load
+ * - whenever component remount the image should remian same
+ */
+
+class Order extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+        price: 500,
+        data: null,
+        inputSerch: "",
+        cityDetail: "",
+        getcityloationDetails: { lat: 28.651952, lng: 77.231495 },
+        image: getRandomCusisineImage()
+    }
   }
+
+
   handleChange = (e) => {
     this.setState({ inputSerch: e.target.value }, () =>
       console.log(this.state.inputSerch)
     );
   };
+
   HandleonClickButton = () => {
     this.setState({});
 
@@ -93,12 +103,15 @@ class Order extends React.Component {
         <CityCard key={el.restaurant.R.res_id} restaurant={el.restaurant} />
       ));
     }
-
+    if (!this.state.image) {
+      this.setState({image:a1})
+    }
+    
     return (
       <div>
         <div
           className="img-container"
-          style={{ backgroundImage: `url(${this.state.image()})` }}
+          style={{ backgroundImage: `url(${this.state.image})` }}
         >
           <input
             type="text"
@@ -122,6 +135,9 @@ class Order extends React.Component {
         </div>
 
         <div className="card-Container">{card}</div>
+
+        <Advertisement/>
+
         <div className="cardInformation">
           You can not use genuine card information in test mode. Here is a test
           card that is widely accepted for Stripe test mode: Credit card number:

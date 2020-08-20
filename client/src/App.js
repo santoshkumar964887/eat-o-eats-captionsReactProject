@@ -5,14 +5,16 @@ import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up
 import OrderUpPage from "./pages/order/order.route";
 import Header from "./components/header/header.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
-import LandingPage from './components/landingPage/landingPage';
-import './App.css';
+import LandingPage from "./components/landingPage/landingPage";
+import Footer from "./components/footer/footer";
+import Developer from "./pages/developer/developer";
+import "./App.css";
 class App extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      currentUser: null
+      currentUser: null,
     };
   }
 
@@ -46,21 +48,20 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header currentUser={this.state.currentUser} />
-        <Switch>
-          <Route path="/signin" component={SignInAndSignUpPage} />
-          <Route path="/order" component={OrderUpPage} />
-          <Route path="/" component={LandingPage}/>
-        </Switch>
-    <div>
-       
-      
-      
-      </div>
+        <div className="app">
+          <Header currentUser={this.state.currentUser} />
+          <Switch>
+            <Route path="/signin" component={SignInAndSignUpPage} />
+            <Route path="/order" component={OrderUpPage} />
+            <Route path="/order" component={SignInAndSignUpPage} />
+            <Route path="/developers" component={Developer }/>
+            <Route path="/" component={LandingPage} />
+          </Switch>
+        </div>
+        <Footer />
       </div>
     );
   }
 }
 
 export default App;
-

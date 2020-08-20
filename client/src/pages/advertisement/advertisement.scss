@@ -1,0 +1,18 @@
+
+.card-container1{
+    display:grid;
+    grid-template-columns: repeat(4,auto);
+    justify-content: center;
+    grid-gap:20px;
+    align-items: center;
+    .card1{
+        width: 300px;
+        height: 400px;
+        .image{
+            width: 290px;
+            height: 390px;
+
+        }
+
+    }
+}

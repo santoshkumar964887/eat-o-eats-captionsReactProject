@@ -47,8 +47,8 @@ img {
   background-color: rgb(33, 6, 77);
   border:2px solid rgb(33, 6, 77);
   color: whitesmoke;
-  height: 450px;
-  width: 320px;
+  height: 500px;
+  width: 330px;
   margin: 10px;
   margin-left: 70px;
   border-radius: 3px;
@@ -56,6 +56,14 @@ img {
     opacity: 0.8;
     transform: scale(1.05);
     transition: all 2s ease-in 0.2s;
+  }
+  .images{
+    height:300px;
+  width: 300px;
+  margin:auto;
+  margin-top: 5px;
+  
+
   }
   
 }
@@ -83,6 +91,8 @@ th{
   table-layout: auto;
   text-transform: capitalize;
   
-}}
+}
+
+}
 
 

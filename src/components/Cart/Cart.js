@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from'react-redux';
+import StripeCheckoutButton from "../../components/Stripe/stripeButton.component";
 import './Cart.css';
 import {productQuantity,clearProduct} from '../../Redux/Action/productQuantity';
 
@@ -12,6 +13,23 @@ function Cart({basketProps,productQuantity,clearProduct}) {
         }
         
     })
+    const showPaymentButton=()=>{
+        if(basketProps.cartCost>0){
+            return(
+                <div>
+                <div className="cardInformation" >
+          You can not use genuine card information in test mode. Here is a test
+          card that is widely accepted for Stripe test mode: Credit card number:
+          4242 4242 4242 4242 Expiration date: any date in the future with the
+          format MM/YY CVC: any 3-digits number
+        </div>
+        <StripeCheckoutButton price={basketProps.cartCost} />
+        </div>
+            )
+                    
+    }
+    else return null
+}
     
     let finalProducts=cartProducts.map((item,index)=>{
         console.log(item);
@@ -54,6 +72,9 @@ function Cart({basketProps,productQuantity,clearProduct}) {
                 <h4 className="basketTotalTitle">Cart Total</h4>
                 <h4 className="basketTotal">{basketProps.cartCost}.00</h4>
             </div>
+            {
+                showPaymentButton()
+            }
             
         </div>
     )

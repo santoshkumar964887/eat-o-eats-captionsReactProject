@@ -13,11 +13,11 @@ const LandingPage = (props) => {
         to big-time urban foodies.
         {props.currentUser ? (
           <Link to="/order" className="button">
-            Oder Now
+            Order Now
           </Link>
         ) : (
           <Link to="/signin" className="button">
-            Oder Now
+            Order Now
           </Link>
         )}
       </span>

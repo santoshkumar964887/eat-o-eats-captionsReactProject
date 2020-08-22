@@ -65,8 +65,8 @@ class App extends React.Component {
             <Route path="/menu" component={MenuItems} />
             <Route path="/cart" component={cartItem} />
             <Route path="/developers" component={Developer }/>
-            <Route path="/" component={LandingPage} />
-          
+            <Route path="/" component={()=><LandingPage currentUser={this.state.currentUser} />} />
+            
           </Switch>
           </Provider>
         </div>

@@ -1,12 +1,15 @@
+
 .item{
-    margin: 0px auto;
-    border-bottom:1px solid #686b78;
+    margin:30px auto;
+   border-bottom:1px solid #686b78;
     height: 250px;
     width: 50%;
     display: grid;
+    
     grid-template-columns: 2fr 1fr;
-    color: #282c3f;
+    color: whitesmoke;
     border-radius: 5px;
+    background-image: linear-gradient(rgba(41, 41, 88, 0.877),rgb(147, 147, 206));
 }
 
 .notdisplayed {
@@ -15,22 +18,22 @@
   
   .displayed {
     display: inline-flex;
-    height: 30px;
+  
     cursor: pointer;
-    width: 90px;
     margin-left: 30%;
     border: black 1px solid;
     text-align: center;
     border-radius: 5px;
-    color: white;
-    padding: 8px;
-    background-color: rgb(66, 40, 40);
+    color: whitesmoke;
+    padding:7px 10px;
+    background-color: rgb(8, 65, 253);
     
   }
 .firstChild{
     margin-left: 1rem;
 }
 .secondChild{
+    color: whitesmoke;
     
     height: 200px;
     width: 200px;
@@ -42,27 +45,25 @@
     border-radius: 7px;
 }
 .rupee{
+    color: whitesmoke;
     display: inline-block;
     width: 50px;
     
-}
-.rupee:before {
-    content: "\20B9";
 }
 
 .rating{
     margin-left: 10%;
     display: inline-block;
+    color: rgb(255, 255, 17);
     
 }
 .item .desc{
-    color: #686b78;
+    color: whitesmoke;
+    
     text-align: left;
 }
-.item:hover{
-    background-color: rgba(0, 0, 0,0.9);
-    color: white !important;
-    cursor: pointer;
+.h3{
+    margin-top:30px;
 }
 
 /* Responsiveness */

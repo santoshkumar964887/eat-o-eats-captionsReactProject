@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect} from 'react-router-dom';
 
 import { auth } from '../../firebase/firebase.utils';
 import {connect} from 'react-redux';
@@ -18,6 +18,11 @@ class Header extends React.Component {
     getNumbers();
     console.log(this.props);
 }
+renderRedirect = () => {
+  if (this.props.currentUser) {
+    return <Redirect to='/order' />
+  }
+}
 
  
   render(){
@@ -26,6 +31,7 @@ class Header extends React.Component {
       userName="Welcome "+this.props.currentUser.displayName;
       userEmail=this.props.currentUser.email;
     console.log(userName);
+
     }
   return(
   
@@ -63,6 +69,7 @@ class Header extends React.Component {
       )
       
       }
+      {this.renderRedirect()}
     </div>
   </div>
   

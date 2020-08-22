@@ -37,14 +37,14 @@ class Menu extends Component {
   render() {
     
     let newArray = this.state.menus.map((item) => (
-      <>
+      <div className="container11">
       
         <div onMouseEnter={e => this.showButton(e)}
               onMouseLeave={e => this.hideButton(e)} 
               className="item">
 
           <div className="firstChild">
-            <h3>{item.name}</h3>
+            <h3 className="h3">{item.name}</h3>
             <span className="rupee"> {item.price}</span>
             <span className="rating">Reviews: {item.rating}</span>
             <button onClick={()=>this.props.addToBasket(item.menu_id)} className={this.state.display}>Add to Cart</button>
@@ -56,7 +56,7 @@ class Menu extends Component {
           </div>
           
         </div>
-      </>
+      </div>
     ));
     return <div>
       

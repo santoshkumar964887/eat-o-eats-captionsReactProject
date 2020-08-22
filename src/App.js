@@ -8,6 +8,11 @@ import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import LandingPage from "./components/landingPage/landingPage";
 import Footer from "./components/footer/footer";
 import Developer from "./pages/developer/developer";
+import MenuItems from './components/Menu/Menu';
+import {Provider} from 'react-redux';
+import store from './Redux/Store/store';
+import cartItem from './components/Cart/Cart';
+
 import "./App.css";
 class App extends React.Component {
   constructor() {
@@ -46,19 +51,27 @@ class App extends React.Component {
   }
 
   render() {
+    
+
     return (
       <div>
         <div className="app">
+        <Provider store={store}>
           <Header currentUser={this.state.currentUser} />
           <Switch>
+          
             <Route path="/signin" component={SignInAndSignUpPage} />
             <Route path="/order" component={OrderUpPage} />
-            <Route path="/order" component={SignInAndSignUpPage} />
+            <Route path="/menu" component={MenuItems} />
+            <Route path="/cart" component={cartItem} />
             <Route path="/developers" component={Developer }/>
             <Route path="/" component={LandingPage} />
+          
           </Switch>
+          </Provider>
         </div>
         <Footer />
+        
       </div>
     );
   }

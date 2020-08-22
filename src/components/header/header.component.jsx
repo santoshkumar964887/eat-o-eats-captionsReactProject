@@ -2,18 +2,31 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { auth } from '../../firebase/firebase.utils';
+import {connect} from 'react-redux';
+import {getNumbers} from '../../Redux/Action/getAction';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
 import './header.styles.scss';
 
-const Header = ({ currentUser }) =>{
-  var userName,userEmail; 
-  if(currentUser){
-    userName="Welcome "+currentUser.displayName;
-    userEmail=currentUser.email;
-  console.log(userName);
+class Header extends React.Component {
+  constructor(props){
+    super(props);
+    
   }
+  componentDidMount(){
+    getNumbers();
+    console.log(this.props);
+}
+
+ 
+  render(){
+    var userName,userEmail;
+    if(this.props.currentUser){
+      userName="Welcome "+this.props.currentUser.displayName;
+      userEmail=this.props.currentUser.email;
+    console.log(userName);
+    }
   return(
   
   <div className='header'>
@@ -22,6 +35,7 @@ const Header = ({ currentUser }) =>{
     </Link>
     <div style={{fontSize:'40px',padding:'10px'}}>Eat-O-Eat</div>
     <div className='options'>
+    <Link to='/cart' >Cart <i class="fa fa-shopping-cart" aria-hidden="true">:{this.props.basketProps.basketNumbers}</i></Link>
       <Link className='option' to='/order'>
         ORDER
       </Link>
@@ -35,7 +49,7 @@ const Header = ({ currentUser }) =>{
           }
         </div>
       </dev>
-      {currentUser ? (
+      {this.props.currentUser ? (
         <div className='option' onClick={() => auth.signOut()}>
           SIGN OUT
         </div>
@@ -43,11 +57,21 @@ const Header = ({ currentUser }) =>{
         <Link className='option3' to='/signin'>
           SIGN IN
         </Link>
-      )}
+          
+        
+          
+      )
+      
+      }
     </div>
   </div>
   
 );
       };
+    }
 
-export default Header;
+    const mapStateToProps=(state)=>({
+      basketProps:state.basketState
+  
+  })
+  export default connect(mapStateToProps,{getNumbers})(Header);

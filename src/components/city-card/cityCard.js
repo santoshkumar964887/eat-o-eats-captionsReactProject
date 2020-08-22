@@ -74,7 +74,7 @@ const url=props.restaurant.featured_image?props.restaurant.featured_image :image
           <td className="th1">{props.restaurant.phone_numbers}</td>
         </tr>
       </table>
-      <Link to='/order/resturent' className="order-now">order now</Link>
+      <Link to='/menu' className="order-now">order now</Link>
     </div>
   );
 };

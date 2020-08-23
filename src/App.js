@@ -61,7 +61,7 @@ class App extends React.Component {
           <Switch>
           
             <Route path="/signin" component={SignInAndSignUpPage} />
-            <Route path="/order" component={OrderUpPage} />
+            <Route path="/order" component={()=><OrderUpPage  currentUser={this.state.currentUser}/>} />
             <Route path="/menu" component={MenuItems} />
             <Route path="/cart" component={cartItem} />
             <Route path="/developers" component={Developer }/>
